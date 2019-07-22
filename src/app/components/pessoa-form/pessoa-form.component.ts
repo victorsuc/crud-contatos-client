@@ -34,4 +34,8 @@ export class PessoaFormComponent implements OnInit {
     }
   }
 
+  cancelForm(){
+    this._router.navigate(['/']);
+  }
+
 }
