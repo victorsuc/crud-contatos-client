@@ -1,1 +1,29 @@
-<p>pessoa-form works!</p>
+<nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <h1 class="navbar-brand" href="#">Novo Contato</h1>
+        </div>
+</nav>
+<div class="container">
+    <form (ngSubmit)="saveForm()">
+        <div class="form group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control" [(ngModel)] = "pessoa.nome">
+        </div>
+        
+        <br>
+        
+        <div class="form group">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" class="form-control" [(ngModel)] = "pessoa.cpf">
+        </div>
+
+        <br>
+
+        <div class="form group">
+                <label for="email">Email</label>
+                <input type="text" name="email" class="form-control" [(ngModel)] = "pessoa.email">
+        </div>
+        <br>
+        <input type="submit" value="save" class="btn btn-success">
+    </form>
+</div>

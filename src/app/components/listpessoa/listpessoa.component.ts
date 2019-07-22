@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PessoaService } from '../../services/pessoa.service'
 import { Pessoa } from '../../pessoa'
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-listpessoa',
   templateUrl: './listpessoa.component.html',
@@ -8,7 +9,7 @@ import { Pessoa } from '../../pessoa'
 })
 export class ListpessoaComponent implements OnInit {
   private pessoas:Pessoa[];
-  constructor(private _pessoaService:PessoaService) {}
+  constructor(private _pessoaService:PessoaService, private _router:Router) {}
 
   ngOnInit() {
     this._pessoaService.getPessoas().subscribe((pessoas)=>{
@@ -25,6 +26,17 @@ export class ListpessoaComponent implements OnInit {
     },(error)=>{
       console.log(error);
     })
+  }
+
+  updatePessoa(pessoa){
+    this._pessoaService.setter(pessoa);
+    this._router.navigate(['/insereContato']);
+  }
+
+  newPessoa(){
+    let pessoa = new Pessoa();
+    this._pessoaService.setter(pessoa);
+    this._router.navigate(['/insereContato']);
   }
 
 }

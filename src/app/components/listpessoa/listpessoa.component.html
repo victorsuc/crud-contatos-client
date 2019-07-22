@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Listagem Contatos</a>
+          <h1 class="navbar-brand" href="#">Listagem Contatos</h1>
         </div>
 </nav>
 <div class="container">
@@ -20,9 +20,9 @@
                 <td>{{pessoa.cpf}}</td>
                 <td>{{pessoa.email}}</td>
                 <td><button class="btn btn-danger" (click)="deletePessoa(pessoa)">Delete</button>
-                    <button class="btn btn-primary">Edit</button></td>
+                    <button class="btn btn-primary" (click)="updatePessoa(pessoa)">Edit</button></td>
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-primary">Novo</button>
+    <button class="btn btn-primary" (click)="newPessoa()">Novo</button>
 </div>

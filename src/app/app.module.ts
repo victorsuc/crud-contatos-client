@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms'
 
 const appRoutes:Routes=[
   {path:'', component:ListpessoaComponent},
-  {path:'op', component:PessoaFormComponent},
+  {path:'insereContato', component:PessoaFormComponent},
 ]
 
 @NgModule({
