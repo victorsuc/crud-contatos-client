@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListpessoaComponent } from './components/listpessoa/listpessoa.component';
 import { PessoaFormComponent } from './components/pessoa-form/pessoa-form.component';
+import { PessoaService } from './services/pessoa.service'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 const appRoutes:Routes=[
   {path:'', component:ListpessoaComponent},
@@ -20,9 +23,11 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
-  providers: [],
+  providers: [PessoaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
